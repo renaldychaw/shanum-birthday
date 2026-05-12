@@ -1,0 +1,62 @@
+/* ── LevelUp Section ── */
+.levelup-section {
+  padding: 6rem 1.5rem;
+  background: linear-gradient(160deg, #f0e8fa 0%, #fce4ef 50%, #e8f4fd 100%);
+  position: relative;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1.2rem;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+}
+
+.stat-pill {
+  padding: 1.1rem 1.4rem;
+  border-radius: 18px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.stat-pill::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.5), rgba(255,255,255,0.1));
+  border-radius: inherit;
+}
+.stat-icon  { font-size: 1.6rem; }
+.stat-label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--lavender-dark);
+  margin: 0.3rem 0 0.1rem;
+}
+.stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; color: var(--lavender-deep); font-weight: 700;
+}
+.stat-bar  { height: 5px; border-radius: 99px; background: rgba(155,114,212,0.15); margin-top: 0.6rem; overflow: hidden; }
+.stat-fill { height: 100%; border-radius: 99px; animation: fillBar 1.5s ease forwards; }
+@keyframes fillBar { from { width: 0; } }
+
+.message-box {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem 2.8rem;
+  position: relative;
+}
+.message-box p {
+  line-height: 1.85; font-size: 1.05rem;
+  color: #5a3a7a; font-weight: 500;
+}
+
+.msg-sparkle {
+  position: absolute;
+  font-size: 1.2rem;
+  animation: msgSparkle 2s ease-in-out infinite;
+}
+@keyframes msgSparkle {
+  0%,100% { transform: scale(1)   rotate(0deg);  opacity: 1;   }
+  50%      { transform: scale(1.4) rotate(20deg); opacity: 0.6; }
+}

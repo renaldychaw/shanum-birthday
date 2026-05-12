@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@600;700&display=swap');
+
+/* ── Reset & Root ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --lavender:       #c4a8e8;
+  --lavender-light: #e8d5fa;
+  --lavender-dark:  #9b72d4;
+  --lavender-deep:  #7b4fb5;
+  --pink:           #f4b8d1;
+  --pink-light:     #fce4ef;
+  --baby-blue:      #b8d8f4;
+  --white:          #fffaff;
+  --glass:          rgba(255,255,255,0.25);
+  --glass-border:   rgba(255,255,255,0.45);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #f0e8fa;
+  color: #4a3060;
+  overflow-x: hidden;
+}
+
+/* ── Shared Glass Card ── */
+.glass-card {
+  background: rgba(255,255,255,0.32);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255,255,255,0.55);
+  border-radius: 24px;
+  box-shadow: 0 8px 40px rgba(155,114,212,0.18), 0 1px 0 rgba(255,255,255,0.5) inset;
+}
+
+/* ── Shared Section Titles ── */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--lavender-deep);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.section-sub {
+  text-align: center;
+  color: var(--lavender-dark);
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  font-weight: 500;
+}
+
+/* ── Scroll Fade Animation ── */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Confetti ── */
+.confetti-piece {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  animation: confettiFall linear forwards;
+  z-index: 9999;
+  pointer-events: none;
+}
+@keyframes confettiFall {
+  0%   { transform: translateY(-20px) rotate(0deg);   opacity: 1; }
+  100% { transform: translateY(110vh)  rotate(720deg); opacity: 0; }
+}
+
+/* ── Floating Hearts ── */
+.float-heart {
+  position: fixed;
+  font-size: 1.4rem;
+  animation: floatUp linear forwards;
+  pointer-events: none;
+  z-index: 100;
+}
+@keyframes floatUp {
+  0%   { transform: translateY(0)      scale(1);   opacity: 0.9; }
+  100% { transform: translateY(-100vh) scale(0.3); opacity: 0;   }
+}
+
+/* ── Shared keyframes ── */
+@keyframes gradShift {
+  0%,100% { background-position: 0%   50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .stats-grid    { grid-template-columns: 1fr 1fr; }
+  .gallery-grid  { grid-template-columns: 1fr 1fr; }
+  .message-box   { padding: 1.8rem 1.5rem; }
+  .timeline      { padding-left: 1.2rem; }
+  .timeline-item { margin-left: 1rem; }
+}

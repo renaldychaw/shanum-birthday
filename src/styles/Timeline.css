@@ -1,0 +1,53 @@
+/* ── Timeline Section ── */
+.timeline-section {
+  padding: 6rem 1.5rem;
+  background: linear-gradient(160deg, #f0e8fa 0%, #fce4ef 100%);
+  position: relative;
+}
+
+.timeline {
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 2rem;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 12px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--lavender), var(--pink), var(--baby-blue));
+  border-radius: 99px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.8rem;
+  padding: 1.6rem 1.8rem;
+  margin-left: 1.5rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.4rem; top: 1.6rem;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 3px solid white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem;
+  box-shadow: 0 0 0 3px rgba(155,114,212,0.3);
+}
+
+.timeline-year {
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--lavender-dark); margin-bottom: 0.4rem;
+}
+
+.timeline-milestone {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; color: var(--lavender-deep);
+  margin-bottom: 0.4rem;
+}
+
+.timeline-desc { font-size: 0.9rem; color: #7a5c9a; line-height: 1.7; }

@@ -1,0 +1,50 @@
+/* ── Closing Section ── */
+.closing-section {
+  padding: 8rem 1.5rem 5rem;
+  background: linear-gradient(135deg, #c4a8e8 0%, #d4b8f5 30%, #f4b8d1 60%, #b8d8f4 100%);
+  background-size: 300% 300%;
+  animation: gradShift 8s ease infinite;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.closing-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: white;
+  text-shadow: 0 4px 32px rgba(123,79,181,0.45);
+  margin-bottom: 1.5rem;
+}
+
+.closing-sub {
+  color: rgba(255,255,255,0.88);
+  font-size: 1.1rem; font-weight: 500;
+  max-width: 480px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+}
+
+.credit {
+  margin-top: 4rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.08em;
+}
+.credit span { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+.closing-sparkle {
+  position: absolute;
+  pointer-events: none;
+  animation: closingSparkle ease-in-out infinite;
+  font-size: 1.4rem;
+}
+@keyframes closingSparkle {
+  0%,100% { transform: scale(0.5) rotate(0deg);  opacity: 0.4; }
+  50%      { transform: scale(1.2) rotate(30deg); opacity: 1;   }
+}
+
+.closing-emojis {
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+}
